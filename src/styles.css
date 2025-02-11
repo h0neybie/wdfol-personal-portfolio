@@ -1,0 +1,306 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Cormorant", serif;
+    scroll-behavior: smooth;
+}
+
+/* Hero Section Background Animation */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* Navigation Bar */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    transition: background 0.5s ease-in-out;
+}
+
+/* Dark Mode Navbar 
+.dark-mode nav {
+}*/
+
+/* Navigation Links */
+.nav-links {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 300;
+    color: #1b1b1b;
+    transition: 0.3s ease;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.dark-mode .nav-links a {
+    color: #f5f5f5;
+}
+
+.nav-links a:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .nav-links a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Logo Styling */
+.logo img {
+    height: 70px;
+    width: auto;
+}
+
+/* Section Styling */
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 50px;
+    text-align: center;
+    min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    background: radial-gradient(at 18% 99%, rgb(255, 255, 255) 0px, transparent 50%) repeat scroll 0% 0%, 
+                radial-gradient(at 97% 8%, rgb(255, 255, 255) 0px, transparent 50%) repeat scroll 0% 0%, 
+                radial-gradient(at 79% 82%, rgb(223, 235, 167) 0px, transparent 50%) repeat scroll 0% 0%,
+                radial-gradient(at 96% 10%, rgb(255, 255, 255) 0px, transparent 50%) repeat scroll 0% 0%,
+                radial-gradient(at 42% 20%, rgb(255, 255, 255) 0px, transparent 50%) repeat scroll 0% 0%,
+                radial-gradient(at 4% 49%, rgb(196, 149, 161) 0px, transparent 50%) repeat scroll 0% 0%,
+                radial-gradient(at 57% 33%, rgb(133, 148, 66) 0px, #d8bed1 50%) repeat scroll 0% 0%;
+    animation: moveBackground 4s infinite alternate ease-in-out;
+    background-attachment: fixed;
+    color: #333;
+    transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Ensures body takes full height */
+}
+
+/* Dark Mode Body */
+body.dark-mode {
+    background: radial-gradient(at 18% 99%, rgb(30, 20, 30) 0px, transparent 50%) repeat scroll 0% 0%, 
+                radial-gradient(at 97% 8%, rgb(25, 15, 25) 0px, transparent 50%) repeat scroll 0% 0%, 
+                radial-gradient(at 79% 82%, rgb(90, 100, 60) 0px, transparent 50%) repeat scroll 0% 0%,
+                radial-gradient(at 96% 10%, rgb(35, 25, 35) 0px, transparent 50%) repeat scroll 0% 0%,
+                radial-gradient(at 42% 20%, rgb(50, 40, 50) 0px, transparent 50%) repeat scroll 0% 0%,
+                radial-gradient(at 4% 49%, rgb(150, 80, 100) 0px, transparent 50%) repeat scroll 0% 0%,
+                radial-gradient(at 57% 33%, rgb(70, 80, 50) 0px, #5a3c5a 50%) repeat scroll 0% 0%;
+    animation: moveBackground 4s infinite alternate ease-in-out;
+    background-attachment: fixed;
+    color: #f5f5f5;
+}
+
+/* Hero Section - Aligning Text */
+h1, h2, p {
+    transition: color 0.5s ease-in-out;
+}
+
+.hero-head{
+margin-top: 20px;
+font-size: 70px;
+}
+
+h1 {
+    font-size: 80px;
+    color: #1b1b1b;
+    font-weight: 500;
+    margin-top: 80px;
+}
+
+.dark-mode h1 {
+    color: #f5f5f5;
+}
+
+h2 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: #1b1b1b;
+}
+
+.dark-mode h2 {
+    color: #f5f5f5;
+}
+
+p {
+    font-size: 20px;
+    max-width: 800px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.dark-mode p {
+    color: #ddd;
+}
+
+/* Profile Image Styling */
+.profile-img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 0;
+    border: 2px solid #767672;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    margin-top: 80px;
+}
+
+.profile-img:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+    border-color: #f0f1e7;
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color:#d8bed1;
+    box-shadow: 0px 4px 6px rgba(17, 2, 2, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode #theme-toggle {
+    background: rgb(116, 53, 91);
+}
+
+/* Media Query for Tablets and Small Laptops */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 60px;
+    }
+
+    h2 {
+        font-size: 35px;
+    }
+
+    p {
+        font-size: 16px;
+        max-width: 600px;
+    }
+
+    .profile-img {
+        width: 200px;
+        height: 200px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .nav-links {
+        position: relative;
+        transform: none;
+        gap: 15px;
+    }
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 40px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    p {
+        font-size: 14px;
+        max-width: 100%;
+    }
+
+    .profile-img {
+        width: 150px;
+        height: 150px;
+    }
+
+    nav {
+        padding: 10px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
+
+/* Scroll Down Button */
+.scroll-down-btn {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #e9b8c5, #b38b9c);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Hover effect */
+  .scroll-down-btn:hover {
+    background: linear-gradient(135deg, #f7e4ed, #f3e3e5);
+    transform: translateY(3px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Bouncy animation */
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(8px);
+    }
+  }
+  
+  .scroll-down-btn {
+    animation: bounce 2s infinite;
+  }
+  

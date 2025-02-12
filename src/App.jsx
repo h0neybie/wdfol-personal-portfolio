@@ -5,6 +5,7 @@ import "./styles/_navbar.scss";
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
+import Projects from './components/Projects';
 import Blog from './components/Blog';
 import Contact from './components/Contact';
 import './script.js';
@@ -33,6 +34,7 @@ function App() {
       <Navbar toggleTheme={toggleTheme} />
       <Hero />
       <About />
+      <Projects/>
       <Blog />
       <Contact />
     </div>

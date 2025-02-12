@@ -12,9 +12,11 @@ function Hero() {
   return (  
     <section className="hero flex flex-col items-center text-center min-h-screen justify-center">
       <img src="/media/profile.jpg" alt="Profile" className="profile-img rounded-full shadow-lg" />
-      <h1 className="hero-head text-4xl font-bold mt-4 text-gray-800">Hello, I am Abby</h1>
+      <h1 className="hero-head text-4xl font-bold mt-4 text-gray-800">Hello, I am Abby.
+      </h1>
       <p className="text-lg text-gray-600 mt-2">
-  I am an aspiring Web Developer passionate about creating user-friendly websites. I specialize in front-end technologies like HTML, CSS, and JavaScript, as well as crafting visually appealing graphics! 
+  I am an aspiring Web Developer passionate about creating user-friendly websites. I specialize in front-end technologies like HTML, CSS, and JavaScript, as well as crafting visually appealing graphics!       ⋆˚✿˖°
+
 </p>
       
       {/* Cute Circular Scroll Down Button */}

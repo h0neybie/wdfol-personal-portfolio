@@ -2,21 +2,20 @@
 import React from 'react';
 import { ChevronDown } from "lucide-react"; // Importing down arrow icon
 
-function Blog() {
+function Projects() {
   // Function to smoothly scroll to the #contact section
   const scrollToNextSection = () => {
-    const contactSection = document.getElementById("contact");
+    const contactSection = document.getElementById("blog");
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
-    <section id="blog" className="relative text-center py-16">
-      <h2 className="text-3xl font-bold">Blog</h2>
-      <p className="mt-4 text-lg text-gray-700">
-      ⋅°₊• ୨୧ ‧₊° Explore my more on my journey in Web Development, Design, and Technology.⋅°₊•୨୧ ‧₊°⋅
-      </p>
+    <section id="projects" className="relative text-center py-16">
+      <h2 className="text-3xl font-bold">Projects</h2>
+      <p>
+      ⋆ ˚｡⋆୨୧˚ A showcase of my Projects and Personal works ⋆ ˚｡⋆୨୧˚ </p>
 
       {/* Scroll Down Button */}
       <button 
@@ -30,4 +29,4 @@ function Blog() {
   );
 }
 
-export default Blog;
+export default Projects;

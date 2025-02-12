@@ -5,7 +5,7 @@ function Contact() {
   return (
     <section id="contact">
       <h2>Contact</h2>
-      <p>Let's connect! Reach out via email or follow me on social media.</p>
+      <p>‧₊˚Let's connect! Reach out via email or follow me on social media.༉‧₊˚.</p>
     </section>
   );
 }

@@ -5,7 +5,7 @@ import { ChevronDown } from "lucide-react"; // Importing down arrow icon
 function About() {
   // Function to smoothly scroll to the #blog section
   const scrollToNextSection = () => {
-    const blogSection = document.getElementById("blog");
+    const blogSection = document.getElementById("projects");
     if (blogSection) {
       blogSection.scrollIntoView({ behavior: "smooth" });
     }
@@ -16,7 +16,7 @@ function About() {
       <h2 className="text-3xl font-bold">About Me</h2>
       <div className="about-card">
   <p >
-    I’ve always loved digital design and front-end development because they let me bring ideas to life through interactive websites and visuals. I enjoy creating clean, responsive designs that are both functional and visually appealing. I’m excited to use my skills in web development and graphic design while learning, growing, and collaborating in a creative environment.
+    I’ve always loved digital design and front-end development because they let me bring ideas to life through interactive websites and visuals. I enjoy creating clean, responsive designs that are both functional and visually appealing. I’m excited to use my skills in web development and graphic design while learning, growing, and collaborating in a creative environment. ᡣ𐭩ྀི
   </p>
 </div>
 

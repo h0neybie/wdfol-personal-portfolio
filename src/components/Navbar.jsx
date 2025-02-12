@@ -54,6 +54,7 @@ function Navbar() {
         {/* Navigation Links */}
         <div className={`nav-links ${isMobileMenuOpen ? "open" : ""}`}>
           <a href="#about">About</a>
+          <a href="#projects">Projects</a>
           <a href="#blog">Blog</a>
           <a href="#contact">Contact</a>
         </div>

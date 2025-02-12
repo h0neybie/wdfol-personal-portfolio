@@ -147,6 +147,9 @@ p {
     width: 230px;
     height: 230px;
   }
+  section {
+    margin-top: 30px;
+  }
 }
 @media (max-width: 480px) {
   h1 {

@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { Sun, Moon } from "lucide-react"; // Importing cute icons
+import React, { useState, useEffect } from "react";
+import { Sun, Moon, Menu, X } from "lucide-react"; // Menu icons
 
 function Navbar() {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
+    // Check saved theme
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme === "dark") {
       setIsDarkMode(true);
@@ -13,41 +15,54 @@ function Navbar() {
       setIsDarkMode(false);
       document.body.classList.remove("dark-mode");
     }
+
+    // Close menu when resizing to desktop
+    const handleResize = () => {
+      if (window.innerWidth > 768) setIsMobileMenuOpen(false);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const toggleTheme = () => {
-    setIsDarkMode(prevState => !prevState);
-    if (!isDarkMode) {
-      document.body.classList.add("dark-mode");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.body.classList.remove("dark-mode");
-      localStorage.setItem("theme", "light");
-    }
+    setIsDarkMode((prev) => !prev);
+    document.body.classList.toggle("dark-mode");
+    localStorage.setItem("theme", isDarkMode ? "light" : "dark");
+  };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen((prev) => !prev);
   };
 
   return (
-    <nav className="flex justify-between items-center p-4">
+    <nav className="navbar">
+      {/* Logo */}
       <div className="logo">
         <a href="#">
-          <img src="/media/logo.PNG" alt="Your Logo" className="h-12" />
+          <img src="/media/logo.PNG" alt="Your Logo" />
         </a>
       </div>
 
-      <div className="nav-links flex space-x-4">
-        <a href="#about" className="hover:text-gray-500">About</a>
-        <a href="#blog" className="hover:text-gray-500">Blog</a>
-        <a href="#contact" className="hover:text-gray-500">Contact</a>
-      </div>
+      {/* Right Side */}
+      <div className="nav-right">
+        {/* Mobile Menu Button */}
+        <button className="menu-toggle" onClick={toggleMobileMenu}>
+          {isMobileMenuOpen ? <X size={32} className="icon" /> : <Menu size={32} className="icon" />}
+        </button>
 
-      {/* Theme Toggle Button */}
-      <button 
-        id="theme-toggle"
-        className={`w-12 h-12 flex items-center justify-center rounded-full transition-all bg-gradient-to-r ${isDarkMode ? 'from-gray-800 to-gray-900' : 'from-pink-400 to-green-400'} shadow-lg hover:from-pink-500 hover:to-green-500`}
-        onClick={toggleTheme}
-      >
-        {isDarkMode ? <Sun size={48} color="white" /> : <Moon size={48} color="white" />}
-      </button>
+        {/* Navigation Links */}
+        <div className={`nav-links ${isMobileMenuOpen ? "open" : ""}`}>
+          <a href="#about">About</a>
+          <a href="#blog">Blog</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        {/* Theme Toggle */}
+        <button className="theme-toggle" onClick={toggleTheme}>
+          {isDarkMode ? <Sun size={32} className="icon" /> : <Moon size={32} className="icon" />}
+        </button>
+      </div>
     </nav>
   );
 }

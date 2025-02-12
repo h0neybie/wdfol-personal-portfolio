@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import './styles.css';
+import "./styles/main.css";
+import "./styles/_navbar.scss";
+
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';

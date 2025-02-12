@@ -1,10 +1,9 @@
 import React from 'react';
 import { ChevronDown } from "lucide-react"; // Importing down arrow icon
-import "../styles.css"; // Import your CSS file
 
 function Hero() {
   const scrollToNextSection = () => {
-    const nextSection = document.getElementById("next-section");
+    const nextSection = document.getElementById("about");
     if (nextSection) {
       nextSection.scrollIntoView({ behavior: "smooth" });
     }

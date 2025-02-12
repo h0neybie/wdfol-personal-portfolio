@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;600;700&display=swap");
+
+// Variables
+$primary-color: #4e4e4a;
+$hover-color: #d0d1c7;
+$dark-bg: rgba(111, 29, 63, 0.9); // Increased opacity
+$light-bg: rgba(255, 255, 255, 0.6);
+$shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+$blur: 15px;
+
+// Navbar Styles
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  z-index: 1000;
+  background: $light-bg;
+  box-shadow: $shadow;
+}
+
+// Dark Mode Navbar
+.dark-mode .navbar {
+  background: $dark-bg !important;
+  box-shadow: $shadow;
+  backdrop-filter: none; // Remove blur for better visibility
+}
+
+  .logo img {
+    height: 70px;
+  }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    .menu-toggle {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #e9b8c5, #b38b9c);
+      border-radius: 50%;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      box-shadow: $shadow;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out;
+
+      &:hover {
+        background: linear-gradient(135deg, #f7e4ed, #f3e3e5);
+        transform: translateY(3px);
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+
+    a {
+      text-decoration: none;
+      font-size: 22px;
+      font-family: "Cormorant", serif;
+      color: $primary-color;
+      font-weight: 400;
+      transition: color 0.3s ease-in-out;
+
+      &:hover {
+        color: $hover-color;
+      }
+    }
+  }
+
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .navbar .nav-right .menu-toggle {
+    display: flex;
+  }
+
+  .navbar .nav-right .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: $primary-color;
+    width: 200px;
+    padding: 1rem;
+    z-index: 998;
+  }
+
+  .navbar .nav-right .nav-links.open {
+    display: flex;
+  }
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #e9b8c5, #b38b9c);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: $shadow;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    background: linear-gradient(135deg, #f7e4ed, #f3e3e5);
+    transform: translateY(3px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.dark-mode .theme-toggle svg {
+  transform: rotate(180deg);
+}
+
+/* Search Box */
+.searchBox {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  .search-field {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: $light-bg;
+    padding: 0.5rem;
+    border-radius: 5px;
+
+    input {
+      border: none;
+      outline: none;
+      padding: 5px;
+    }
+  }
+
+  .searchToggle.active ~ .search-field {
+    display: block;
+  }
+}
+
+.nav-links.open {
+  display: flex;
+  background: $light-bg !important;
+  color: $primary-color;
+  padding: 5px;
+  border-radius: 8px;
+  box-shadow: $shadow;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+// Dark mode adjustments
+.dark-mode .nav-links.open {
+  background: $dark-bg;
+  color: #fff;
+}
+
+.dark-mode .nav-links a {
+  color: #fff;
+
+  &:hover {
+    color: $hover-color;
+  }
+}
+
+
+
+/* Logo Styling */
+.logo img {
+  height: 70px;
+  width: auto;
+}

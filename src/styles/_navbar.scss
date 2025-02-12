@@ -2,6 +2,7 @@
 
 // Variables
 $primary-color: #4e4e4a;
+$basic-color: #1b1b1b;
 $hover-color: #d0d1c7;
 $dark-bg: rgba(111, 29, 63, 0.9); // Increased opacity
 $light-bg: rgba(255, 255, 255, 0.6);
@@ -46,6 +47,7 @@ $blur: 15px;
     .menu-toggle {
       width: 50px;
       height: 50px;
+      color: $basic-color !important;
       background: linear-gradient(135deg, #e9b8c5, #b38b9c);
       border-radius: 50%;
       display: none;
@@ -110,6 +112,7 @@ $blur: 15px;
 .theme-toggle {
   width: 50px;
   height: 50px;
+  color: $basic-color !important;
   background: linear-gradient(135deg, #e9b8c5, #b38b9c);
   border-radius: 50%;
   display: flex;
@@ -181,8 +184,6 @@ $blur: 15px;
     color: $hover-color;
   }
 }
-
-
 
 /* Logo Styling */
 .logo img {

@@ -8,6 +8,7 @@
 }
 
 /* Variables */
+
 $dark-color: #1b1b1b;
 $light-color: #f5f5f5;
 $accent-color: #d8bed1;
@@ -226,6 +227,7 @@ p {
 .scroll-down-btn {
     width: 50px;
     height: 50px;
+    color: $basic-color !important;
     background: linear-gradient(135deg, #e9b8c5, #b38b9c);
     border-radius: 50%;
     display: flex;

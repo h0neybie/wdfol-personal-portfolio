@@ -163,6 +163,9 @@ p {
     width: 180px;
     height: 180px;
   }
+  .profile-img section {
+    margin-top: 15px;
+  }
 }
 /* Scroll Down Button */
 .scroll-down-btn {

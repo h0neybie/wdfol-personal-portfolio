@@ -15,7 +15,7 @@ function Blog() {
     <section id="blog" className="relative text-center py-16">
       <h2 className="text-3xl font-bold">Blog</h2>
       <p className="mt-4 text-lg text-gray-700">
-        Explore my thoughts on web development, design, and technology.
+        Explore my more on my journey in Web Development, Design, and Technology.
       </p>
 
       {/* Scroll Down Button */}

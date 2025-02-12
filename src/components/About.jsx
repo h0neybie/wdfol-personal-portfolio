@@ -14,9 +14,11 @@ function About() {
   return (
     <section id="about" className="relative text-center py-16">
       <h2 className="text-3xl font-bold">About Me</h2>
-      <p className="mt-4 text-lg text-gray-700">
-        Welcome to my portfolio! I am a passionate web developer.
-      </p>
+      <div className="about-card">
+  <p >
+    I’ve always loved digital design and front-end development because they let me bring ideas to life through interactive websites and visuals. I enjoy creating clean, responsive designs that are both functional and visually appealing. I’m excited to use my skills in web development and graphic design while learning, growing, and collaborating in a creative environment.
+  </p>
+</div>
 
       {/* Cute Circular Scroll Down Button */}
       <button 

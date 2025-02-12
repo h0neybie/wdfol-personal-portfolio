@@ -30,3 +30,31 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
   
+
+  document.addEventListener("DOMContentLoaded", () => {
+    // Create the Back to Top button
+    const backToTopButton = document.createElement("button");
+    backToTopButton.innerHTML = "↑";
+    backToTopButton.id = "back-to-top";
+    backToTopButton.style.display = "none";  // Hide button by default
+    document.body.appendChild(backToTopButton);
+  
+    // Show the button when scrolled near the bottom (within 100px from the bottom)
+    window.addEventListener("scroll", () => {
+      // Check if we're near the bottom (100px from the bottom)
+      if (document.documentElement.scrollHeight - window.scrollY - window.innerHeight <= 100) {
+        backToTopButton.style.display = "block";  // Show the button
+      } else {
+        backToTopButton.style.display = "none";  // Hide the button
+      }
+    });
+  
+    // Smooth scroll to top when the button is clicked
+    backToTopButton.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"  // Ensures smooth scrolling effect
+      });
+    });
+  });
+  

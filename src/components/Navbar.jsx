@@ -53,24 +53,31 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <Link to="/" className="logo" onClick={handleLogoClick}>
-        <img src="/media/logo.PNG" alt="Your Logo" />
-      </Link>
+  <Link to="/" className="logo" onClick={handleLogoClick}>
+    <img src="/media/logo.PNG" alt="Your Logo" />
+  </Link>
 
-      <div className="nav-right">
-        <div className="nav-links">
-          <Link to="/about">About</Link>
-          <Link to="/projects">Projects</Link>
-          <Link to="/blog">Blog</Link>
-          <Link to="/contact">Contact</Link>
-        </div>
+  <div className="nav-right">
+    {/* Mobile Menu Toggle Button */}
+    <button onClick={toggleMobileMenu} className="menu-toggle">
+      {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+    </button>
 
-        {/* Theme Toggle Button */}
-        <button onClick={toggleTheme} className="theme-toggle">
-          {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
-        </button>
-      </div>
-    </nav>
+    {/* Navigation Links */}
+    <div className={`nav-links ${isMobileMenuOpen ? "open" : ""}`}>
+      <Link to="/about">About</Link>
+      <Link to="/projects">Projects</Link>
+      <Link to="/blog">Blog</Link>
+      <Link to="/contact">Contact</Link>
+    </div>
+
+    {/* Theme Toggle Button */}
+    <button onClick={toggleTheme} className="theme-toggle">
+      {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
+    </button>
+  </div>
+</nav>
+
   );
 }
 

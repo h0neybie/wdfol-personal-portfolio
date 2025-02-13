@@ -13,7 +13,7 @@ function Projects() {
 
   return (
     <section id="projects" className="relative text-center py-16">
-      <h2 className="text-3xl font-bold">Projects</h2>
+      <h2 className="text-3xl font-bold">My Works</h2>
       <p>
       ⋆ ˚｡⋆୨୧˚ Explore my works! This is my showcase of Projects and Personal works currently as a Third Year Web Development student.⋆ ˚｡⋆୨୧˚ </p>
 

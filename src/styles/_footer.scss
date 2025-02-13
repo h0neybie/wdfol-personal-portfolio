@@ -1,17 +1,17 @@
 // 🎨 SCSS Variables
 $primary-color: #121010;
 $light-text: #ffffff;
-$light-pink: rgba(51, 49, 50, 0.8); // Soft pink with transparency
-$soft-green: rgba(195, 121, 157, 0.8); // Soft green with transparency
-$lightglass-bg: rgba(255, 255, 255, 0.2); // Glass-like effect
-$darkglass-bg: rgba(105, 60, 75, 0.2); // Glass-like effect
+$light-pink: rgba(51, 49, 50, 0.8); 
+$soft-green: rgba(195, 121, 157, 0.8);  
+$lightglass-bg: rgba(255, 255, 255, 0.2); 
+$darkglass-bg: rgba(105, 60, 75, 0.2);  
 $glass-border: rgba(255, 255, 255, 0.4);
 $shadow-color: rgba(0, 0, 0, 0.2);
 $link-hover: #b74966;
 
 // 🌟 Light Mode (Glassmorphism)
 .footer {
-    width: 100vw; // Ensures full viewport width
+    width: 100vw; 
     display: flex;
   justify-content: center;
   align-items: center;

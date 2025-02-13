@@ -1,4 +1,4 @@
-/* Global Styles */
+
 * {
   margin: 0;
   padding: 0;
@@ -7,9 +7,6 @@
   scroll-behavior: smooth;
 }
 
-/* Variables */
-/*About*/
-/*Background*/
 @keyframes moveBackground {
   0% {
     background-position: 0% 0%;
@@ -19,8 +16,15 @@
   }
 }
 body {
-  background-color: #f5f5f5;
+  background-color: rgba(255, 255, 255, 0.2);
   background: radial-gradient(at 18% 99%, rgb(255, 255, 255) 0px, transparent 50%) repeat scroll 0% 0%, radial-gradient(at 97% 8%, rgb(255, 255, 255) 0px, transparent 50%) repeat scroll 0% 0%, radial-gradient(at 79% 82%, rgb(223, 235, 167) 0px, transparent 50%) repeat scroll 0% 0%, radial-gradient(at 96% 10%, rgb(255, 255, 255) 0px, transparent 50%) repeat scroll 0% 0%, radial-gradient(at 42% 20%, rgb(255, 255, 255) 0px, transparent 50%) repeat scroll 0% 0%, radial-gradient(at 4% 49%, rgb(196, 149, 161) 0px, transparent 50%) repeat scroll 0% 0%, radial-gradient(at 57% 33%, rgb(133, 148, 66) 0px, #d8bed1 50%) repeat scroll 0% 0%;
+  background-attachment: fixed;
+  color: #1b1b1b;
+  transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 body.dark-mode {
@@ -30,7 +34,6 @@ body.dark-mode {
   background-attachment: fixed;
 }
 
-/* Hero Section */
 .hero {
   height: 100vh;
   display: flex;
@@ -40,7 +43,6 @@ body.dark-mode {
   text-align: center;
 }
 
-/* Section Styling */
 section {
   display: flex;
   align-items: center;
@@ -54,24 +56,9 @@ section {
   margin-top: 20px;
 }
 
-/* Body Styling */
-body {
-  background-attachment: fixed;
-  color: #1b1b1b;
-  transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
-
-/* Dark Mode */
-.dark-mode body {
-  color: #f5f5f5;
-}
-
-/* Hero Section - Aligning Text */
-h1, h2, p {
+h1,
+h2,
+p {
   transition: color 0.5s ease-in-out;
 }
 
@@ -112,7 +99,6 @@ p {
   color: #ddd;
 }
 
-/* Profile Image Styling */
 .profile-img {
   width: 260px;
   height: 260px;
@@ -132,46 +118,45 @@ p {
   border-color: #f0f1e7;
 }
 
-#back-to-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
+.scroll-down-btn {
   width: 50px;
   height: 50px;
-  color: #fff !important;
+  color: #1b1b1b !important;
   background: linear-gradient(135deg, #cc95af, #a06a79) !important;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   border: none;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.3s ease-in-out;
   position: relative;
   overflow: hidden;
   animation: bounce 7s infinite;
+  margin-top: 10px;
 }
-#back-to-top:hover {
-  background-color: #c9bfbe;
-  transform: scale(1.1);
+
+.scroll-down-btn:hover {
+  background: linear-gradient(135deg, #f7e4ed, #f3e3e5);
+  transform: translateY(3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
 }
-#back-to-top:focus {
-  outline: none;
+
+body.dark-mode .scroll-down-btn {
+  background: linear-gradient(135deg, #a9687b, #b33e70) !important;
+  color: #f5f5f5 !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5) !important;
 }
 
 @keyframes bounce {
-  0% {
+  0%, 100% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0);
+    transform: translateY(8px);
   }
 }
-/* Media Queries */
 @media (max-width: 768px) {
   h1 {
     font-size: 60px;
@@ -210,46 +195,3 @@ p {
     margin-top: 15px;
   }
 }
-/* Scroll Down Button */
-.scroll-down-btn {
-  width: 50px;
-  height: 50px;
-  color: #1b1b1b !important;
-  background: linear-gradient(135deg, #cc95af, #a06a79) !important;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  position: relative;
-  overflow: hidden;
-  animation: bounce 7s infinite;
-  margin-top: 10px;
-}
-
-/* Hover effect */
-.scroll-down-btn:hover {
-  background: linear-gradient(135deg, #f7e4ed, #f3e3e5);
-  transform: translateY(3px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
-}
-
-/*Dark mode for next button*/
-body.dark-mode .scroll-down-btn {
-  background: linear-gradient(135deg, #a9687b, #b33e70) !important;
-  color: #f5f5f5 !important;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5) !important;
-}
-
-/* Bouncy animation */
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(8px);
-  }
-}/*# sourceMappingURL=main.css.map */

@@ -1,22 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;600;700&display=swap");
 
-// Variables
+//======  Variables  ======//
 $primary-color: #4e4e4a;
 $basic-color: #1b1b1b;
 $basic-white: #ffffff;
 $hover-color: #d0d1c7;
-$dark-bg: rgba(111, 29, 63, 0.9); // Increased opacity
+$dark-bg: rgba(111, 29, 63, 0.9); 
 $light-bg: rgba(255, 255, 255, 0.6);
 $shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+$padding-navbar: 16px;
+$padding-navbar-links: 5px;
 $blur: 15px;
 
-// Navbar Styles
+//======  Navigation Bar  ======//
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 1rem 2rem;
+  padding: $padding-navbar;
   position: fixed;
   top: 0;
   left: 0;
@@ -29,49 +31,21 @@ $blur: 15px;
   box-shadow: $shadow;
 }
 
-// Dark Mode Navbar
+//======  Dark Mode for Nav  ======//
 .dark-mode .navbar {
   background: $dark-bg !important;
   box-shadow: $shadow;
-  backdrop-filter: none; // Remove blur for better visibility
+  backdrop-filter: none;
 }
 
-  .logo img {
-    height: 70px;
-  }
+.logo img {
+  height: 70px;
+}
 
-  .nav-right {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-
-    .menu-toggle {
-      width: 50px;
-      height: 50px;
-      color: $basic-color !important;
-      background: linear-gradient(135deg, #e7cdd8, #dca7c1) !important;
-      border-radius: 50%;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      box-shadow: $shadow;
-      border: none;
-      cursor: pointer;
-      transition: transform 0.3s ease-in-out;
-
-      &:hover {
-        background: linear-gradient(135deg, #f7e4ed, #f3e3e5);
-        transform: translateY(3px);
-        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
-      }
-    }
-  }
-
-  .dark-mode .menu-toggle{
-    background: linear-gradient(135deg, #a9687b, #b33e70)!important;
-    color: $basic-white !important;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5) !important;}
-  
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 
   .nav-links {
     display: flex;
@@ -91,9 +65,37 @@ $blur: 15px;
     }
   }
 
+  //======  Menu Button  ======//
+  .menu-toggle {
+    width: 50px;
+    height: 50px;
+    color: $basic-color !important;
+    background: linear-gradient(135deg, #e7cdd8, #dca7c1) !important;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: $shadow;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
 
-/* Responsive Navbar */
-@media (max-width: 768px) {
+    &:hover {
+      background: linear-gradient(135deg, #f7e4ed, #f3e3e5);
+      transform: translateY(3px);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+    }
+  }
+}
+
+.dark-mode .menu-toggle {
+  background: linear-gradient(135deg, #a9687b, #b33e70) !important;
+  color: $basic-white !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5) !important;
+}
+
+  //======  For small screens  ======//
+  @media (max-width: 768px) {
   .navbar .nav-right .menu-toggle {
     display: flex;
   }
@@ -106,7 +108,7 @@ $blur: 15px;
     right: 0;
     background: $primary-color;
     width: 200px;
-    padding: 1rem;
+    padding: $padding-navbar;
     z-index: 998;
   }
 
@@ -115,8 +117,8 @@ $blur: 15px;
   }
 }
 
-/* Theme Toggle Button */
-.theme-toggle {
+  //======  Theme Toggle Button  ======//
+  .theme-toggle {
   width: 50px;
   height: 50px;
   color: $basic-color !important;
@@ -142,48 +144,26 @@ $blur: 15px;
   transform: rotate(180deg);
 }
 
-.dark-mode .theme-toggle{
-  background: linear-gradient(135deg, #a9687b, #b33e70)!important;
+.dark-mode .theme-toggle {
+  background: linear-gradient(135deg, #a9687b, #b33e70) !important;
   color: $basic-white !important;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5) !important;}
-/* Search Box */
-.searchBox {
-  position: relative;
-  display: flex;
-  align-items: center;
-
-  .search-field {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background: $light-bg;
-    padding: 0.5rem;
-    border-radius: 5px;
-
-    input {
-      border: none;
-      outline: none;
-      padding: 5px;
-    }
-  }
-
-  .searchToggle.active ~ .search-field {
-    display: block;
-  }
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5) !important;
 }
+
+
+  //======  Navigation on Right  ======//
+
 
 .nav-links.open {
   display: flex;
   background: $light-bg !important;
   color: $primary-color;
-  padding: 5px;
+  padding: $padding-navbar-links;
   border-radius: 8px;
   box-shadow: $shadow;
   transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
-// Dark mode adjustments
 .dark-mode .nav-links.open {
   background: $dark-bg;
   color: #fff;
@@ -197,7 +177,8 @@ $blur: 15px;
   }
 }
 
-/* Logo Styling */
-.logo img {
+  //======  Logo Styling  ======//
+  .logo img {
   height: 70px;
-  width: auto;}
+  width: auto;
+}

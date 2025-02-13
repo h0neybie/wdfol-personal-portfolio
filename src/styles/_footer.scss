@@ -1,18 +1,17 @@
-// 🎨 SCSS Variables
+//======  Variables  ======//
 $primary-color: #121010;
 $light-text: #ffffff;
-$light-pink: rgba(51, 49, 50, 0.8); 
-$soft-green: rgba(195, 121, 157, 0.8);  
-$lightglass-bg: rgba(255, 255, 255, 0.2); 
-$darkglass-bg: rgba(105, 60, 75, 0.2);  
+$soft-pink: rgba(195, 121, 157, 0.8);
+$lightglass-bg: rgba(255, 255, 255, 0.2);
+$darkglass-bg: rgba(105, 60, 75, 0.2);
 $glass-border: rgba(255, 255, 255, 0.4);
 $shadow-color: rgba(0, 0, 0, 0.2);
 $link-hover: #b74966;
 
-// 🌟 Light Mode (Glassmorphism)
+//======  Footer on Default  ======//
 .footer {
-    width: 100vw; 
-    display: flex;
+  width: 100vw;
+  display: flex;
   justify-content: center;
   align-items: center;
   font-family: "Cormorant", serif;
@@ -40,7 +39,7 @@ $link-hover: #b74966;
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 1rem;
-    color: $light-pink;
+    color: $primary-color;
     text-shadow: 2px 2px 6px $shadow-color;
   }
 
@@ -53,7 +52,7 @@ $link-hover: #b74966;
   }
 
   &__link {
-    color: $soft-green;
+    color: $soft-pink;
     text-decoration: none;
     font-size: 20px;
     font-weight: bold;
@@ -67,12 +66,11 @@ $link-hover: #b74966;
 
   &__copyright {
     font-size: 0.9rem;
-    color: $light-pink;
-    
+    color: $primary-color;
   }
 }
 
-// 🌙 Dark Mode Styles
+//======  Footer on Dark Mode  ======//
 .darkmode {
   .footer {
     background: $darkglass-bg;
@@ -98,7 +96,7 @@ $link-hover: #b74966;
   }
 }
 
-// 📱 Responsive Design for Small Screens
+//======  For Small Screens  ======//
 @media (max-width: 768px) {
   .footer {
     padding: 2rem 1rem;

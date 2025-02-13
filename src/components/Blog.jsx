@@ -3,7 +3,7 @@ import React from 'react';
 import { ChevronDown } from "lucide-react"; // Importing down arrow icon
 
 function Blog() {
-  // Function to smoothly scroll to the #contact section
+//smooth scroll
   const scrollToNextSection = () => {
     const contactSection = document.getElementById("contact");
     if (contactSection) {

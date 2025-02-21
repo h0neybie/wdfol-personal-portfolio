@@ -1,13 +1,27 @@
 import React from "react";
 import { ChevronDown } from "lucide-react";
 
-function Hero() {
-  const scrollToNextSection = () => {
-    const nextSection = document.getElementById("about");
-    if (nextSection) {
-      nextSection.scrollIntoView({ behavior: "smooth" });
-    }
+// Download Button Component
+const DownloadButton = () => {
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = "/media/Dizon_Abby.pdf"; 
+    link.download = "Dizon_Abby.pdf"; 
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
+
+  return (
+    <button onClick={handleDownload} className="download-button">
+      Download Resume
+    </button>
+  );
+};
+
+// Hero Section Component
+const Hero = () => {
+
 
   return (
     <section className="hero flex flex-col items-center text-center min-h-screen justify-center">
@@ -25,16 +39,12 @@ function Hero() {
         JavaScript, as well as crafting visually appealing graphics! ⋆˚✿˖°
       </p>
 
-      {/* Cute Circular Scroll Down Button */}
-      <button
-        onClick={scrollToNextSection}
-        className="scroll-down-btn"
-        aria-label="Scroll Down"
-      >
-        <ChevronDown size={28} className="text-white" />
-      </button>
+      {/* Download Button */}
+      <DownloadButton />
+
+  
     </section>
   );
-}
+};
 
 export default Hero;

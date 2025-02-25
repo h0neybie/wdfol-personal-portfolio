@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
 import { ChevronDown } from "lucide-react";
 
 // Download Button Component
@@ -21,9 +23,11 @@ const DownloadButton = () => {
       <button onClick={handleDownload} className="download-button">
         Download Resume
       </button>
-      <button onClick={handleContact} className="download-button">
-        Contact Me
-      </button>
+      <button className="download-button">
+  <Link to="/contact" style={{ textDecoration: "none", color: "inherit" }}>
+    Contact Me
+  </Link>
+</button>
     </div>
   );
 };

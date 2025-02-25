@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { ChevronDown } from "lucide-react";
 
 // Download Button Component
@@ -21,28 +21,46 @@ const DownloadButton = () => {
 
 // Hero Section Component
 const Hero = () => {
+  const [isVisible, setIsVisible] = useState(false);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const heroSection = document.querySelector(".hero");
+      const rect = heroSection.getBoundingClientRect();
+      if (rect.top < window.innerHeight * 0.8) {
+        setIsVisible(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <section className="hero flex flex-col items-center text-center min-h-screen justify-center">
-      <img
-        src="/media/profile.jpg"
-        alt="Profile"
-        className="profile-img rounded-full shadow-lg"
-      />
-      <h1 className="hero-head text-4xl font-bold mt-4 text-gray-800">
+      {/* Profile Image */}
+      <div className="profile-wrapper">
+        <img
+          src="/media/profile.jpg"
+          alt="Profile"
+          className={`profile-img shadow-lg transition-transform duration-700 ${
+            isVisible ? "scale-100 opacity-100" : "scale-90 opacity-0"
+          }`}
+        />
+      </div>
+
+      {/* Headline */}
+      <h1 className={`hero-head transition-opacity duration-700 ${isVisible ? "opacity-100" : "opacity-0"}`}>
         Hello, I am Abby.
       </h1>
-      <p className="text-lg text-gray-600 mt-2">
-        I am an aspiring Web Developer passionate about creating user-friendly
-        websites. I specialize in front-end technologies like HTML, CSS, and
-        JavaScript, as well as crafting visually appealing graphics! ⋆˚✿˖°
+
+      {/* Description */}
+      <p className={`hero-desc transition-opacity duration-700 ${isVisible ? "opacity-100" : "opacity-0"}`}>
+        An aspiring Web Developer focused on crafting user-friendly and visually appealing websites. Specializing in front-end development and graphic design. 
       </p>
 
       {/* Download Button */}
       <DownloadButton />
-
-  
     </section>
   );
 };

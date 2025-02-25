@@ -248,6 +248,125 @@
     font-size: 0.85rem;
   }
 }
+.about-section {
+  padding: 4rem 2rem;
+  text-align: center;
+  border-radius: 15px;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+.about-section.light-mode {
+  background: radial-gradient(at 18% 99%, rgb(255, 255, 255) 0px, transparent 50%) repeat, radial-gradient(at 97% 8%, rgb(255, 255, 255) 0px, transparent 50%) repeat, radial-gradient(at 79% 82%, rgb(223, 235, 167) 0px, transparent 50%) repeat, radial-gradient(at 96% 10%, rgb(255, 255, 255) 0px, transparent 50%) repeat, radial-gradient(at 42% 20%, rgb(255, 255, 255) 0px, transparent 50%) repeat, radial-gradient(at 4% 49%, rgb(196, 149, 161) 0px, transparent 50%) repeat, radial-gradient(at 57% 33%, rgb(133, 148, 66) 0px, #869a4d 50%) repeat;
+  color: #333;
+}
+.about-section.light-mode .title {
+  color: #000;
+  text-align: left;
+}
+.about-section.light-mode .about-card {
+  background: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.about-section.dark-mode {
+  background: radial-gradient(at 18% 99%, rgb(30, 20, 30) 0px, transparent 50%) repeat, radial-gradient(at 97% 8%, rgb(25, 15, 25) 0px, transparent 50%) repeat, radial-gradient(at 79% 82%, rgb(90, 100, 60) 0px, transparent 50%) repeat, radial-gradient(at 96% 10%, rgb(35, 25, 35) 0px, transparent 50%) repeat, radial-gradient(at 42% 20%, rgb(50, 40, 50) 0px, transparent 50%) repeat, radial-gradient(at 4% 49%, rgb(150, 80, 100) 0px, transparent 50%) repeat, radial-gradient(at 57% 33%, rgb(70, 80, 50) 0px, #5a3c5a 50%) repeat;
+  color: #ddd;
+}
+.about-section.dark-mode .title {
+  color: #fff;
+}
+.about-section.dark-mode .about-card {
+  background: #321a32;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
+.about-section .title {
+  font-size: 4.5rem;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+.about-section .about-card {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 15px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.about-section .about-card p {
+  font-size: 1.5rem;
+  line-height: 1.8;
+}
+.about-section .about-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+.about-section .technologies {
+  margin-top: 3rem;
+}
+.about-section .technologies .sub-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+.about-section .technologies .tech-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.about-section .technologies .tech-icons .tech-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.about-section .technologies .tech-icons .tech-icon svg {
+  font-size: 4rem;
+  transition: transform 0.3s ease-in-out, color 0.3s;
+}
+.about-section .technologies .tech-icons .tech-icon:hover svg {
+  transform: scale(1.2);
+}
+.about-section .technologies .html {
+  color: #e34c26;
+}
+.about-section .technologies .css {
+  color: #264de4;
+}
+.about-section .technologies .js {
+  color: #f7df1e;
+}
+.about-section .technologies .react {
+  color: #61dafb;
+}
+.about-section .technologies .tailwind {
+  color: #38bdf8;
+}
+.about-section .technologies .bootstrap {
+  color: #7952b3;
+}
+.about-section .technologies .github {
+  color: #171515;
+}
+.about-section .technologies .photoshop {
+  color: #001d34;
+}
+.about-section .scroll-down-btn {
+  margin-top: 3rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+.about-section .scroll-down-btn:hover {
+  transform: translateY(5px);
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 30px;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -481,4 +600,14 @@ body.dark-mode .scroll-down-btn {
   section {
     margin-top: 15px;
   }
+}
+.welcome-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f4; /* Adjust to match your theme */
+  color: #333;
+  font-size: 1.5rem;
 }/*# sourceMappingURL=main.css.map */

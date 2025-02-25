@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+:root {
+  --bg-light: #f5f5f5;
+  --text-light: #21230d;
+  --accent-light: #a9667a;
+  --accent-text: #883d55;
+  
+  --bg-dark: #121212;
+  --text-dark: #f5f5f5;
+  --accent-dark: #d68e9f; 
+}
+
+body {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  font-family: "Libre Caslon Display", serif;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+.about-section {
+  text-align: center;
+  padding: 4rem 5vw;
+}
+
+.about-text {
+  font-size: 100px;
+  font-weight: 350;
+  text-transform: uppercase;
+  text-align: justify;
+  word-spacing: 0.2rem;
+  letter-spacing: 0.05rem;
+
+}
+.about-text {
+  animation: fadeInUp 1s ease-in-out;
+}
+
+span {
+  background: linear-gradient(90deg, #a9667a, #7a851a); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;}
+
+.dark-mode span {
+  background: linear-gradient(90deg, #cda2ae, #b2b889);  
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tech-category {
+  font-size: 20px !important;
+  font-weight: bold;
+  background: linear-gradient(90deg, #a9667a, #7a851a); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Dark Mode */
+.dark-mode .tech-category {
+  background: linear-gradient(90deg, #cda2ae, #b2b889);  
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+
+.dark-mode .about-text{
+  color: #d68e9f;  
+}
+
+.about-text span {
+  display: inline-block;
+  width: 100%;
+  position: relative;
+  opacity: 0.9;
+}
+
+.about-text span:nth-child(odd) {
+  text-align: left;
+  margin-left: 1vw;
+}
+
+.about-text span:nth-child(even) {
+  text-align: right;
+  margin-right: 9vw;
+}
+
+.technologies {
+  margin-top: 5rem;
+}
+
+ 
+.tech-category h4 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.tech-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.tech-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border-radius: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tech-icon svg {
+  font-size: 2.2rem;
+  color: var(--accent-light);
+  transition: color 0.3s;
+}
+
+.dark-mode .tech-icon svg {
+  color: linear-gradient(135deg, #a9687b, #b33e70) !important;
+
+}
+
+.tech-icon span {
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.tech-icon:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.scroll-down-btn {
+  margin-top: 3rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  animation: bounce 1.5s infinite;
+}
+
+.scroll-down-btn svg {
+  color: var(--text-light);
+  transition: color 0.3s;
+}
+
+.dark-mode .scroll-down-btn svg {
+  color: var(--text-dark);
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .about-text {
+    font-size: 3rem;
+    text-align: center;
+  }
+  .about-text span:nth-child(even),
+  .about-text span:nth-child(odd) {
+    text-align: center;
+    margin: 0;
+  }
+  
+
+  .tech-category h4 {
+    font-size: 10px;
+  }
+}
+
+.technologies {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.sub-title {
+  font-size: 40px !important;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #a9667a, #7a851a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+/* Dark Mode Support */
+.dark-mode .sub-title {
+  background: linear-gradient(90deg, #cda2ae, #b2b889);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .sub-title {
+    font-size: 32px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .sub-title {
+    font-size: 28px;
+    letter-spacing: 1px;
+  }
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

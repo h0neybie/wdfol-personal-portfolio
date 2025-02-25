@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Outfit:wght@300;500;700&display=swap");
+
+/*============ Hero Section ============*/
+.hero {
+  padding: 6rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin-top: 50px;
+}
+
+/*============ Hero Title ============*/
+.hero-head {
+  font-size: 5rem; 
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin-top: 1.5rem;
+  background: linear-gradient(90deg, #a9667a, #7a851a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: opacity 0.6s ease-in-out, transform 0.5s ease-in-out;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+/* Dark Mode: Only changing gradient color */
+.dark-mode .hero-head {
+  background: linear-gradient(90deg, #dfb2bf, #ced49d);  
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/*============ Hero Description ============*/
+.hero-desc {
+  font-size: 1.6rem; /* 25px */
+  font-weight: 500;
+  background: linear-gradient(90deg, #a9667a, #7a851a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  max-width: 800px;
+  margin-top: 15px;
+  line-height: 1.6;
+  transition: opacity 0.5s ease-in-out;
+  animation: fadeInUp 1.2s ease-in-out;
+}
+
+/* Dark Mode: Only changing gradient color */
+.dark-mode .hero-desc {
+  background: linear-gradient(90deg, #dfb2bf, #ced49d);  
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+}
+
+/*============ Download Resume Button ============*/
+.download-button {
+  margin-top: 2.5rem;
+  padding: 14px 28px;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 1.5s ease-in-out;
+}
+
+.download-button:hover {
+  transform: translateY(-4px);
+  background: linear-gradient(135deg, #8c8e73, #ba9a5a);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+/*============ Responsive Font Sizes ============*/
+@media screen and (max-width: 1024px) {
+  .hero-head {
+    font-size: 4.5rem;  
+  }
+  .hero-desc {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
+    padding: 4rem 1.5rem;
+  }
+  .hero-head {
+    font-size: 3.75rem; 
+  }
+  .hero-desc {
+    font-size: 1.4rem;
+    max-width: 90%;
+  }
+  .download-button {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero {
+    padding: 3rem 1rem;
+    margin-top: 140px;
+  }
+  .hero-head {
+    font-size: 2.5rem; 
+    letter-spacing: 1px;
+  }
+  .hero-desc {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+  .download-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}

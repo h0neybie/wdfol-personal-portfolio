@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-light: #f5f5f5;
+  --text-light: #21230d;
+  --accent-light: #a9667a;
+  
+  --bg-dark: #121212;
+  --text-dark: #f5f5f5;
+  --accent-dark: #d68e9f;
+}
+
+/* ====== PROJECTS SECTION ====== */
+.projects {
+  text-align: center;
+  padding: 80px 20px;
+  position: relative;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.projects-title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #bd8a98, #b0b870);  
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.projects-subtitle {
+  font-size: 1.2rem;
+  color: var(--accent-light);
+  margin-top: 10px;
+}
+
+
+
+.projects-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ====== PROJECT ITEM ====== */
+.project-item {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.project-image {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.project-image:hover {
+  transform: scale(1.05);
+}
+
+.project-info {
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.project-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--text-light);
+}
+.dark-mode .project-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+
+.project-description {
+  font-size: 1rem;
+  color: var(--accent-light);
+  margin-top: 10px;
+}
+
+/* ====== SEPARATOR LINE ====== */
+.project-divider {
+  width: 80%;
+  height: 2px;
+  background: var(--text-light);
+  margin: 40px auto;
+  opacity: 0.2;
+}
+
+/* ====== SCROLL DOWN BUTTON ====== */
+.scroll-down-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-light);
+}
+
+.scroll-down-btn:hover {
+  color: var(--accent-light);
+}

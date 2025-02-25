@@ -3,7 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./styles/main.css";
 import "./styles/_navbar.scss";
 import "./styles/_footer.scss";
-
+import "./styles/_about-section.scss";
+import "./styles/_hero-section.scss";
+import "./styles/projects-section.scss";
 
 
 import Navbar from "./components/Navbar";

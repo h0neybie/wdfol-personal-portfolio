@@ -1,5 +1,11 @@
 @import 'navbar';
 @import 'footer';
+@import 'about-section';
+@import 'hero-section';
+@import 'projects-section';
+
+
+
 
 //====== VARIABLES ======//
 $basic-color: #1b1b1b;
@@ -68,6 +74,8 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+    overflow-x: hidden;
+  
 }
 
 body.dark-mode {
@@ -106,7 +114,7 @@ section {
   text-align: center;
   min-height: 100vh;
   width: 100%;
-  margin-top: 20px;
+  margin-top: 0;
 }
 
 //====== TYPOGRAPHY ======//
@@ -171,7 +179,7 @@ p {
 }
 
 //====== DOWNLOAD BUTTON ======//
-.download-button {
+.main-button {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -208,7 +216,7 @@ p {
 
 //====== DARK MODE ======//
 .dark-mode {
-  .download-button {
+  .main-button {
     background: linear-gradient(135deg, #a9687b, #b33e70) !important;
     color: $dark-text-color;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
@@ -304,4 +312,15 @@ body.dark-mode .scroll-down-btn {
   section {
     margin-top: 15px;
   }
+}
+
+.welcome-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f4; /* Adjust to match your theme */
+  color: #333;
+  font-size: 1.5rem;
 }

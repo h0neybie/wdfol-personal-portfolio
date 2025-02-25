@@ -1,224 +1,75 @@
-@import 'navbar';
-@import 'footer';
-@import 'about-section';
-@import 'hero-section';
-@import 'projects-section';
-
-
-
-
-//====== VARIABLES ======//
-$basic-color: #1b1b1b;
-$dark-color: #1b1b1b;
-$light-color: #f5f5f5;
-$accent-color: #d8bed1;
-$shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-$transition: 0.3s ease-in-out;
-$light-background: rgba(255, 255, 255, 0.2);
-$dark-background: rgba(0, 0, 0, 0.5);
-$light-border: rgba(255, 255, 255, 0.3);
-$dark-border: rgba(255, 255, 255, 0.5);
-$light-text-color: #fff;
-$dark-text-color: #ddd;
-$card-shadow: rgba(0, 0, 0, 0.1);
-$padding: 50px;
-$padding-zero: 0;
-$border-radius: 12px;
-
-// -- Download Button Colors (aligned with the main accent color) --
-$primary-color: darken($accent-color, 10%);
-$secondary-color: $accent-color;
-$hover-primary: darken($accent-color, 15%);
-$hover-secondary: darken($accent-color, 5%);
-$shadow-color: rgba(216, 190, 209, 0.3);
-$shadow-hover: rgba(216, 190, 209, 0.4);
-
-//====== MIXINS ======//
-@mixin light-gradient {
-  background: radial-gradient(at 18% 99%, rgb(255, 255, 255) 0px, transparent 50%) repeat,
-              radial-gradient(at 97% 8%, rgb(255, 255, 255) 0px, transparent 50%) repeat,
-              radial-gradient(at 79% 82%, rgb(223, 235, 167) 0px, transparent 50%) repeat,
-              radial-gradient(at 96% 10%, rgb(255, 255, 255) 0px, transparent 50%) repeat,
-              radial-gradient(at 42% 20%, rgb(255, 255, 255) 0px, transparent 50%) repeat,
-              radial-gradient(at 4% 49%, rgb(196, 149, 161) 0px, transparent 50%) repeat,
-              radial-gradient(at 57% 33%, rgb(133, 148, 66) 0px, $accent-color 50%) repeat;
-}
-
-@mixin dark-gradient {
-  background: radial-gradient(at 18% 99%, rgb(30, 20, 30) 0px, transparent 50%) repeat,
-              radial-gradient(at 97% 8%, rgb(25, 15, 25) 0px, transparent 50%) repeat,
-              radial-gradient(at 79% 82%, rgb(90, 100, 60) 0px, transparent 50%) repeat,
-              radial-gradient(at 96% 10%, rgb(35, 25, 35) 0px, transparent 50%) repeat,
-              radial-gradient(at 42% 20%, rgb(50, 40, 50) 0px, transparent 50%) repeat,
-              radial-gradient(at 4% 49%, rgb(150, 80, 100) 0px, transparent 50%) repeat,
-              radial-gradient(at 57% 33%, rgb(70, 80, 50) 0px, #5a3c5a 50%) repeat;
-}
-
-//====== GLOBAL STYLES ======//
-* {
-  margin: 0;
-  padding: $padding-zero;
-  box-sizing: border-box;
-  font-family: "Cormorant", serif;
-  scroll-behavior: smooth;
-}
-
-//====== BODY STYLES ======//
-body {
-  background-color: $light-background;
-  @include light-gradient;
-  background-attachment: fixed;
-  color: $dark-color;
-  transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-    overflow-x: hidden;
-  
-}
-
-body.dark-mode {
-  @include dark-gradient;
-  color: $light-color;
-  animation: moveBackground 4s infinite alternate ease-in-out;
-  background-attachment: fixed;
-}
-
-//====== ANIMATIONS ======//
-@keyframes moveBackground {
-  0% {
-    background-position: 0% 0%;
-  }
-  100% {
-    background-position: 10% 10%;
-  }
-}
-
-//====== SECTIONS ======//
-.hero {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-}
-
-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+//====== CONTACT FORM STYLES ======//
+.contact-form {
+  background: $light-background;
   padding: $padding;
-  text-align: center;
-  min-height: 100vh;
-  width: 100%;
-  margin-top: 0;
-}
-
-//====== TYPOGRAPHY ======//
-h1, h2, p {
-  transition: color 0.5s ease-in-out;
-}
-
-.hero-head {
-  margin-top: 20px;
-  font-size: 70px;
-}
-
-h1 {
-  font-size: 80px;
-  color: $dark-color;
-  font-weight: 500;
-  margin-top: 80px;
-}
-
-.dark-mode h1 {
-  color: $light-color;
-}
-
-h2 {
-  font-size: 50px;
-  margin-bottom: 20px;
-  color: $dark-color;
-}
-
-.dark-mode h2 {
-  color: $light-color;
-}
-
-p {
-  font-size: 20px;
-  max-width: 800px;
-  color: #333;
-  line-height: 1.6;
-}
-
-.dark-mode p {
-  color: #ddd;
-}
-
-//====== PROFILE IMAGE ======//
-.profile-img {
-  width: 260px;
-  height: 260px;
-  border-radius: 50%;
-  object-fit: cover;
-  display: block;
-  margin: 80px auto 0;
-  border: 2px solid #767672;
+  border-radius: $border-radius;
   box-shadow: $shadow;
-  transition: transform $transition, box-shadow $transition, border-color $transition;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+  transition: all $transition;
+
+  h2 {
+    font-size: 32px;
+    color: $dark-color;
+    margin-bottom: 20px;
+  }
+
+  input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid $light-border;
+    background: rgba(255, 255, 255, 0.5);
+    color: $dark-color;
+    transition: all $transition;
+
+    &:focus {
+      border-color: $accent-color;
+      box-shadow: 0px 4px 10px $shadow-color;
+    }
+  }
+
+  button {
+    background: linear-gradient(135deg, #cc95af, #a06a79);
+    color: $light-color;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all $transition;
+    box-shadow: 0 4px 10px $shadow-color;
+    margin-top: 10px;
+
+    &:hover {
+      background: linear-gradient(45deg, $hover-primary, $hover-secondary);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px $shadow-hover;
+    }
+  }
 }
 
-.profile-img:hover {
-  transform: scale(1.1);
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
-  border-color: #f0f1e7;
-}
+// Dark Mode Adjustments
+.dark-mode .contact-form {
+  background: $dark-background;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6);
 
-//====== DOWNLOAD BUTTON ======//
-.main-button {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: linear-gradient(135deg, #cc95af, #a06a79) !important;
-  color: $light-color;
-  border: none;
-  border-radius: 25px;
-  padding: 12px 20px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 10px $shadow-color;
-  margin-top: 10px;
-
-  &:hover {
-    background: linear-gradient(45deg, $hover-primary, $hover-secondary);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px $shadow-hover;
+  h2 {
+    color: $light-color;
   }
 
-  &:active {
-    transform: translateY(1px);
+  input, textarea {
+    background: rgba(255, 255, 255, 0.1);
+    color: $light-text-color;
+    border: 1px solid $dark-border;
   }
 
-  .icon {
-    transition: transform 0.3s ease;
-  }
-
-  &:hover .icon {
-    transform: scale(1.1);
-  }
-}
-
-//====== DARK MODE ======//
-.dark-mode {
-  .main-button {
-    background: linear-gradient(135deg, #a9687b, #b33e70) !important;
-    color: $dark-text-color;
+  button {
+    background: linear-gradient(135deg, #a9687b, #b33e70);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
 
     &:hover {
@@ -226,101 +77,4 @@ p {
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.8);
     }
   }
-}
-
-//======  Scroll Down Button  ======//
-.scroll-down-btn {
-  width: 50px;
-  height: 50px;
-  color: $basic-color !important;
-  background: linear-gradient(135deg, #cc95af, #a06a79) !important;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: $shadow;
-  border: none;
-  cursor: pointer;
-  transition: all $transition;
-  position: relative;
-  overflow: hidden;
-  animation: bounce 7s infinite;
-  margin-top: 10px;
-}
-
-//======  Hover Effect  ======//
-.scroll-down-btn:hover {
-  background: linear-gradient(135deg, #f7e4ed, #f3e3e5);
-  transform: translateY(3px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
-}
-
-//======  Scroll Down Button in Dark Mode  ======//
-body.dark-mode .scroll-down-btn {
-  background: linear-gradient(135deg, #a9687b, #b33e70) !important;
-  color: $light-color !important;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5) !important;
-}
-
-//======  Bouncy Animation  ======//
-@keyframes bounce {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(8px);
-  }
-}
-
-//====== MEDIA QUERIES ======//
-@media (max-width: 768px) {
-  h1 {
-    font-size: 60px;
-  }
-  h2 {
-    font-size: 35px;
-  }
-  p {
-    font-size: 16px;
-    max-width: 600px;
-  }
-  .profile-img {
-    width: 230px;
-    height: 230px;
-  }
-  section {
-    margin-top: 30px;
-  }
-}
-
-@media (max-width: 480px) {
-  h1 {
-    font-size: 40px;
-  }
-  h2 {
-    font-size: 28px;
-  }
-  p {
-    font-size: 14px;
-    max-width: 100%;
-  }
-  .profile-img {
-    width: 180px;
-    height: 180px;
-  }
-  section {
-    margin-top: 15px;
-  }
-}
-
-.welcome-container {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #f4f4f4; /* Adjust to match your theme */
-  color: #333;
-  font-size: 1.5rem;
 }

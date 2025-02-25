@@ -5,19 +5,30 @@ import { ChevronDown } from "lucide-react";
 const DownloadButton = () => {
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/media/Dizon_Abby.pdf"; 
-    link.download = "Dizon_Abby.pdf"; 
+    link.href = "/media/Dizon_Abby.pdf";
+    link.download = "Dizon_Abby.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
 
+  const handleContact = () => {
+    window.location.href = "/contact";
+  };
+
   return (
-    <button onClick={handleDownload} className="download-button">
-      Download Resume
-    </button>
+    <div className="btn-group">
+      <button onClick={handleDownload} className="download-button">
+        Download Resume
+      </button>
+      <button onClick={handleContact} className="download-button">
+        Contact Me
+      </button>
+    </div>
   );
 };
+
+ 
 
 // Hero Section Component
 const Hero = () => {

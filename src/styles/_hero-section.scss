@@ -72,6 +72,16 @@
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
 }
 
+
+.btn-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;  }
+
+.btn-group {
+  display: flex;
+  gap: 12px;
+}
 /*============ Responsive Font Sizes ============*/
 @media screen and (max-width: 1024px) {
   .hero-head {
